@@ -32,7 +32,13 @@
 
     var clone = this.scrollable.children[0].cloneNode(true);
     this.scrollable.appendChild(clone);
+
+    this.animate('-');
     return this;
+  };
+
+  NScarousel.prototype.animate = function(direction) {
+    this.scrollable.style.left = direction + '50px';
   };
 
   root.NScarousel = NScarousel;
